@@ -1,0 +1,18 @@
+<div class="sidebar" [class.open]="isOpen">
+  <div class="sidebar-header">
+    <h4>Happy Company</h4>
+  </div>
+  <ul class="nav-items">
+    <li *ngFor="let item of navItems">
+      <a (click)="navigate(item.link)">
+        <span class="icon" [innerHTML]="item.icon"></span>
+        <span class="nav-text">{{ item.name }}</span>
+      </a>
+    </li>
+  </ul>
+  <button (click)="logout()" class="logout-button">Logout</button>
+</div>
+
+<div class="main-content" [class.shift]="isOpen">
+  <router-outlet></router-outlet>
+</div>
